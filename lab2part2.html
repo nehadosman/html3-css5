@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+        div {
+            border: 2px solid rgb(143, 141, 142);
+            width: 550px;
+            height: 300px;
+        }
+
+
+        button,
+        p {
+            margin-left: 10px;
+        }
+
+        input {
+            height: 30px;
+            width: 270px;
+            display: block;
+            margin: 10px;
+            font-size: 20px;
+
+        }
+
+        input::placeholder {
+            color: rgb(196, 202, 202);
+            font-size: 20px;
+            padding: 3%;
+        }
+
+        input:valid+p {
+            visibility: hidden;
+        }
+
+        input:valid {
+            border: 2px solid green;
+            outline: 0;
+
+        }
+
+        input:invalid+p {
+            visibility: visible;
+
+        }
+
+        /* input[type="email"]::after {
+            content: "The required email adress may not include any special character other '@'signs.";
+        }
+
+        input[type="text"]::after {
+            content: "The required user name may only be a collection of alphabitical characters.";
+        }  */
+
+        input:focus {
+            border: 2px solid rgb(0, 11, 128);
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form name = "form">
+            <h1> Change Email Address</h1>
+            <input type="text" pattern="[A-Za-z].{2,}" required autocomplete="off" placeholder="Username" name="username"
+                id="username" />
+            <p>The required user name may only be a collection of alphabitical characters</p>
+
+            <input type="email" autocomplete="off" placeholder="Email" required id="email" name="email"/>
+            <p>The required email address may include any special character othe than the '@' sign</p>
+
+            <input type="button" value="change" id="btn">
+        </form>
+    </div>
+</body>
+
+<script>
+    var btn = document.getElementById("btn")
+    console.log(btn);
+    btn.addEventListener('click', function () {
+        var name = document.getElementById("username").value;
+        var mail = document.getElementById("email").value;
+        console.log(name,mail);
+        localStorage.setItem("username", name);
+        localStorage.setItem("Email", mail);
+        console.log(localStorage.getItem("username"));
+        console.log(localStorage.getItem("Email"));
+        location.href="file:///C:/js/html&css/lab3part2.html"
+        
+    });
+    
+</script>
+
+</html>

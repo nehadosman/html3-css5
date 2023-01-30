@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geolocation 2</title>
+</head>
+
+<body>
+    <button onclick="getloc()"> share location </button>
+    <script>
+        function getloc() {
+            navigator.geolocation.getCurrentPosition(showLoc, showErr)
+        }
+        function showLoc(e) {
+            var latitude = e.coords.latitude;
+            var longitude = e.coords.longitude;
+            console.log(e, latitude, longitude);
+           location.assign("http://maps.google.com/maps?q" + latitude + ",+" + longitude);
+        }
+        function showErr(x) {
+            switch (x.code) {
+                case 0:
+                    console.log(x.message);
+                    break;
+                case 1:
+                    console.log(x.message);
+                    break;
+                case 2:
+                    console.log(x.message);
+                    break;
+                case 3:
+                    console.log("no time");
+                    break;
+            }
+        }
+        var options = {
+            // timeout:0
+        };
+
+
+    </script>
+</body>
+
+</html>

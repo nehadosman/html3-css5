@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web worker</title>
+  </head>
+  <body>
+<button id="sum">calculate sumtion</button>
+   <button id="bg">change bg</button>
+    <script> 
+    var worker = new Worker("worker.js") 
+    var sum = document.getElementById("sum");
+    var bg = document.getElementById("bg");
+    
+    sum.onclick = function(){
+        // var summ = 0;
+        // for(var i=0;i<10000000000;i++){
+        //     summ+=i;
+        // }
+        // alert(summ)
+         worker.postMessage(""); //delegation "search"
+      }
+      worker.onmessage = function(message){
+        console.log(message);
+        alert(message.data);
+      }
+
+      bg.onclick = function(){
+        if(document.body.style.background !== "green"){
+            document.body.style.background = "green";
+        }else{
+            document.body.style.background = "blue";
+        }
+      }
+    </script>
+  </body>
+</html>
