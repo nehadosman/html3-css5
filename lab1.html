@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- ? responsive  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .topnav {
+        background-color: rgb(172, 161, 161);
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        align-content: space-between;
+        justify-content: center;
+        text-align: center;
+      }
+      .topnav a {
+        text-decoration: none;
+        color: rgb(31, 29, 29);
+      }
+
+      .nav-btn {
+        width: 25%;
+        text-decoration: none;
+      }
+
+      .main {
+        display: flex;
+        gap: 15px;
+      }
+
+      .div-l,
+      .div-r {
+        width: 50%;
+        padding: 10 px;
+        border: 2px solid;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .body {
+        text-align: center;
+      }
+
+      .footer {
+        height: 20%;
+        text-align: center;
+        background-color: rgb(172, 161, 161);
+        align-items: center;
+      }
+      @media (max-width: 700px) {
+        .topnav {
+          display: block;
+          height: 140px;
+        }
+        .main {
+          display: block;
+        }
+        .div-l,
+        .div-r {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="nav-btn"><a class="active" href="#home">Home</a></div>
+      <div class="nav-btn"><a href="#about">About</a></div>
+      <div class="nav-btn"><a href="#service">Services</a></div>
+      <div class="nav-btn"><a href="#contact">Contact</a></div>
+    </div>
+
+    <div class="main">
+      <div class="div-l">
+        <div class="body">This is the flex item</div>
+        <div class="footer">Footer</div>
+      </div>
+      <div class="div-r">
+        <div class="body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus
+          ipsam, nesciunt iste hic cumque minus sapiente magnam obcaecati
+          aliquid eaque ab nam atque veniam rem doloremque ad repellat natus
+          expedita!
+        </div>
+        <div class="footer">Footer</div>
+      </div>
+    </div>
+    <!-- <span
+      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ipsam,
+      nesciunt iste hic cumque minus sapiente magnam obcaecati aliquid eaque ab
+      nam atque veniam rem doloremque ad repellat natus expedita!</span> -->
+  </body>
+</html>
